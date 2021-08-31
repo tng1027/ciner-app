@@ -61,7 +61,7 @@ function App() {
         <Person
           key={people[1].id}
           person={people[1]}
-          modifySupercialChoices={modifySuperficialChoices}
+          modifySuperficialChoices={modifySuperficialChoices}
           likedUsers={likedUsers}
         />
       ) : (
