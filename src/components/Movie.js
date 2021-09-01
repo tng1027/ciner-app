@@ -7,7 +7,7 @@ const Movie = ({ movie, makeDecision }) => {
 
   return (
     <>
-      <Card className="person">
+      <Card className="movie">
         <Image src={Poster} alt={Title} wrapped ui={false} />
         <Card.Content>
           <Card.Header>{Title}</Card.Header>

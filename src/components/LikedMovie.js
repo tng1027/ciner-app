@@ -3,7 +3,7 @@ import { Card, Header, Image } from 'semantic-ui-react'
 const LikedMovie = ({ movie }) => {
     const { Title, Released, Poster } = movie;
     return (
-        <Card className="liked-person">
+        <Card className="liked-movie">
             <Image src={Poster} alt={`You liked ${Title}`} wrapped ui={false} />
             <Card.Content>
                 <Card.Header><Header size='tiny'>{Title}</Header></Card.Header>

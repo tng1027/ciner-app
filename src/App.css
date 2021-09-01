@@ -1,65 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
 body {
-    margin: 0;
-    padding: 0;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
-    line-height: 1;
-    background-color: #f7f7f7;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
-ol,
-ul {
-    list-style: none;
-}
-
-header {
-    background-color: white;
-    overflow: hidden;
-    display: flex;
-}
-
-header {
-    background-color: white;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 5px;
-    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
-}
-
-header button {
-    background-color: transparent;
-    border: 0;
-    width: 50px;
-    cursor: pointer;
-}
-
-header button img {
-    width: 100%;
-}
-
-header .fl {
-    float: left;
-    width: 33%;
-}
-
-header .fl:first-child {
-    text-align: left;
-}
-
-header .fl:last-child {
-    text-align: right;
-}
-
-.person {
+.movie {
     width: 100% !important;
 }
 
-.person img {
+.movie img {
     width: 100% !important;
     height: calc(100vh - 350px) !important;
     display: block !important;
@@ -79,62 +28,11 @@ header .fl:last-child {
     min-width: 150px;
 }
 
-#lonely {
+#empty {
     padding: 10px;
     border-radius: 1px;
     background-color: white;
     border-top: 1px solid #eee;
-}
-
-
-/* Stolen CSS */
-
-.pulse {
-    margin: auto;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: #FFDEDF;
-    box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
-    -webkit-animation: pulse 2s infinite;
-    animation: pulse 2s infinite;
-    margin-top: 50px;
-    margin-bottom: 35px;
-    border: 3px solid #F5C9CA;
-    padding: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.pulse img {
-    width: 70%;
-    border-radius: 100px;
-    border: 5px solid white;
-}
-
-.pulse:hover {
-    animation: none;
-}
-
-@-webkit-keyframes pulse {
-    0% {
-        -webkit-box-shadow: 0 0 0 0 rgba(241, 201, 202, 0.4);
-    }
-    100% {
-        -webkit-box-shadow: 0 0 0 35px rgba(241, 201, 202, 0);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        -moz-box-shadow: 0 0 0 0 rgba(241, 201, 202, 0.4);
-        box-shadow: 0 0 0 0 rgba(241, 201, 202, 0.4);
-    }
-    100% {
-        -moz-box-shadow: 0 0 35px 35px rgba(241, 201, 202, 0);
-        box-shadow: 0 0 35px 35px rgba(241, 201, 202, 0);
-    }
 }
 
 .ui.sidebar {
@@ -154,7 +52,7 @@ header .fl:last-child {
     margin-top: 85px;
 }
 
-.liked-person img {
+.liked-movie img {
     width: 100% !important;
     height: auto !important;
     display: block !important;

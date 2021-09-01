@@ -9,8 +9,8 @@ const Empty = ({ source, activeUser }) => {
     }
 
     return (
-        <div className="lonely">
-            <div id="liked-people">
+        <div className="empty">
+            <div>
                 <Header size='small'>{liked.length > 0 && "Movies you liked"}</Header>
 
                 {liked.length > 0 && <LikedMovies movies={getMovies(liked)} />}
