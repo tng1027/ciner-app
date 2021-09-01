@@ -1,10 +1,12 @@
+import { Button, Icon } from 'semantic-ui-react';
+
 const Love = ({ userId, makeDecision }) => {
     return (
-        <button
-            type="button"
+        <Button
+            color="red"
             onClick={() => makeDecision(userId, 'LOVE_USER')}>
-            <img src="images/misc/love.png" alt="Love User" />
-        </button>
+            <Icon name='heart' /> Love
+        </Button>
     )
 }
 

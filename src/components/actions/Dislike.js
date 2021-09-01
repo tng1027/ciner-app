@@ -1,10 +1,12 @@
+import { Button, Icon } from 'semantic-ui-react';
+
 const Dislike = ({ userId, makeDecision }) => {
     return (
-        <button
-            type="button"
+        <Button
+            color="grey"
             onClick={() => makeDecision(userId, 'DISLIKE_USER')}>
-            <img src="images/misc/dislike.png" alt="Dislike User" />
-        </button>
+            <Icon name='thumbs down' /> Dislike
+        </Button>
     )
 }
 

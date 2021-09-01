@@ -1,4 +1,5 @@
 import './App.css';
+import 'semantic-ui-css/semantic.min.css'
 
 import data from './data.json'
 import { useState } from 'react';
