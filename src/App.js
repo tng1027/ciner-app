@@ -9,42 +9,40 @@ import { Grid } from 'semantic-ui-react'
 import Navbar from './components/Navbar';
 
 const App = () => {
-  const [isNavbarShow, setIsNavbarShow] = useState(true);
   const [people, setPeople] = useState(data);
-  const [likedUsers, setLikedUsers] = useState([]);
-  const [lovedUsers, setLovedUsers] = useState([]);
-  const [dislikedUsers, setDislikedUsers] = useState([]);
-  const activeUser = 0;
+  const [activeUser, setActiveUser] = useState({
+    likedUsers: [],
+    dislikedUsers: [],
+    lovedUsers: []
+  })
 
   const removedPersonFromDataSrc = (peopleSource, userId) => {
     return peopleSource.filter(person => person.id !== userId);
   }
 
   const makeDecision = (userId, action) => {
-    const newPeople = [...people];
-
     switch (action) {
       case 'LIKE_USER':
-        if (!people[activeUser].likedUsers.includes(userId)) {
-          newPeople[activeUser].likedUsers.push(userId)
+        if (!activeUser.likedUsers.includes(userId)) {
+          activeUser.likedUsers.push(userId)
 
-          setLikedUsers([...likedUsers, data[userId]]);
+          setActiveUser({ ...activeUser })
           setPeople(removedPersonFromDataSrc(people, userId));
         }
         break;
       case 'DISLIKE_USER':
-        if (!people[activeUser].dislikedUsers.includes(userId)) {
-          newPeople[activeUser].dislikedUsers.push(userId)
+        if (!activeUser.dislikedUsers.includes(userId)) {
+          activeUser.dislikedUsers.push(userId)
 
-          setDislikedUsers([...dislikedUsers, data[userId]]);
+          setActiveUser({ ...activeUser })
           setPeople(removedPersonFromDataSrc(people, userId));
         }
         break;
       case 'LOVE_USER':
-        if (!people[activeUser].lovedUsers.includes(userId)) {
-          newPeople[activeUser].lovedUsers.push(userId)
+        if (!activeUser.lovedUsers.includes(userId)) {
+          activeUser.lovedUsers.push(userId)
 
-          setLovedUsers([...lovedUsers, data[userId]]);
+          setActiveUser({ ...activeUser })
           setPeople(removedPersonFromDataSrc(people, userId));
         }
         break;
@@ -57,7 +55,7 @@ const App = () => {
 
   return (
     <>
-      <Navbar visible={isNavbarShow} />
+      <Navbar visible={true} />
 
       <div className="app">
         <Grid columns='equal'>
@@ -65,16 +63,9 @@ const App = () => {
           </Grid.Column>
           <Grid.Column width={8}>
             {person ? (
-              <Person
-                person={person}
-                makeDecision={makeDecision}
-              />
+              <Person person={person} makeDecision={makeDecision} />
             ) : (
-              <Lonely
-                activeUserImage={people[activeUser].image}
-                dislikedUsers={dislikedUsers}
-                likedUsers={likedUsers}
-                lovedUsers={lovedUsers} />
+              <Lonely people={data} activeUser={activeUser} />
             )}
           </Grid.Column>
           <Grid.Column>

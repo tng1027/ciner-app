@@ -1,29 +1,27 @@
-import LikedPerson from "./LikedPerson";
+import { Header, Image } from "semantic-ui-react";
+import LikedPeople from "./LikedPeople";
 
-const Lonely = ({ activeUserImage, likedUsers, lovedUsers }) => {
+const Lonely = ({ people, activeUser }) => {
+    const { likedUsers, lovedUsers } = activeUser;
+
+    const getUsers = (ids) => {
+        return people.filter(person => ids.some(id => id === person.id))
+    }
+
     return (
         <div className="lonely">
-            <p>There is no new around you.</p>
-
             <span className="pulse">
-                <img src={`/images/users/${activeUserImage}`} alt="You..." />
+                <Image src={`/images/misc/user.png`} alt="You..." />
             </span>
 
             <div id="liked-people">
-                <p>
-                    {likedUsers.length > 0 &&
-                        "People you liked"}
-                </p>
+                <Header size='small'>{likedUsers.length > 0 && "People you liked"}</Header>
 
-                {likedUsers.map(item => (
-                    <LikedPerson key={item.id} person={item} />
-                ))}
+                {likedUsers.length > 0 && <LikedPeople users={getUsers(likedUsers)} />}
 
-                <p>{lovedUsers.length > 0 && 'People you loved'}</p>
+                <Header size='small'>{lovedUsers.length > 0 && "People you loved"}</Header>
 
-                {lovedUsers.map(item => (
-                    <LikedPerson key={item.id} person={item} />
-                ))}
+                {lovedUsers.length > 0 && <LikedPeople users={getUsers(lovedUsers)} />}
             </div>
         </div>
     )

@@ -86,28 +86,6 @@ header .fl:last-child {
     border-top: 1px solid #eee;
 }
 
-#liked-people {
-    margin: auto;
-    overflow: hidden;
-}
-
-#liked-people .liked-person {
-    display: inline-block;
-    width: 33%;
-    margin-top: 10px;
-}
-
-#liked-people .liked-person-image {
-    border-radius: 5px;
-}
-
-#liked-people .liked-person-image img {
-    width: 140px;
-    height: 100px;
-    object-fit: cover;
-    object-position: 50% 50%;
-}
-
 
 /* Stolen CSS */
 
@@ -174,4 +152,11 @@ header .fl:last-child {
 
 .app {
     margin-top: 85px;
+}
+
+.liked-person img {
+    width: 100% !important;
+    height: 160px !important;
+    display: block !important;
+    object-fit: cover;
 }
