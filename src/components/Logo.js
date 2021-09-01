@@ -1,9 +1,5 @@
 const Logo = () => {
-    return (
-        <div>
-            <img src="/images/misc/logo.png" alt="Tinder logo" />
-        </div>
-    )
+    return <img className="logo" src="/images/misc/logo.png" alt="Tinder logo" />
 }
 
 export default Logo;
