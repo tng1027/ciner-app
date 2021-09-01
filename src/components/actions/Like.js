@@ -1,10 +1,10 @@
 import { Button, Icon } from 'semantic-ui-react';
 
-const Like = ({ userId, makeDecision }) => {
+const Like = ({ movieId, makeDecision }) => {
     return (
         <Button
             color="orange"
-            onClick={() => makeDecision(userId, 'LIKE_USER')}>
+            onClick={() => makeDecision(movieId, 'LIKE_MOVIE')}>
             <Icon name='thumbs up' /> Like
         </Button>
     )

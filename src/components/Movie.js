@@ -2,30 +2,30 @@ import React from 'react';
 import Actions from './Actions';
 import { Card, Image } from 'semantic-ui-react'
 
-const Person = ({ person, makeDecision }) => {
-  const { name, desc, age, image } = person;
+const Movie = ({ movie, makeDecision }) => {
+  const { Title, Plot, Released, Poster } = movie;
 
   return (
     <>
       <Card className="person">
-        <Image src={`/images/users/${image}`} alt={name} wrapped ui={false} />
+        <Image src={Poster} alt={Title} wrapped ui={false} />
         <Card.Content>
-          <Card.Header>{name}</Card.Header>
+          <Card.Header>{Title}</Card.Header>
           <Card.Meta>
-            <span className='date'>{age}</span>
+            <span className='date'>{Released}</span>
           </Card.Meta>
           <Card.Description>
-            {desc}
+            {Plot}
           </Card.Description>
         </Card.Content>
       </Card>
 
       <Actions
-        person={person}
+        movie={movie}
         makeDecision={makeDecision}
       />
     </>
   );
 };
 
-export default Person;
+export default Movie;

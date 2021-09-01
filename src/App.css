@@ -61,7 +61,7 @@ header .fl:last-child {
 
 .person img {
     width: 100% !important;
-    height: calc(100vh - 260px) !important;
+    height: calc(100vh - 350px) !important;
     display: block !important;
     object-fit: cover;
 }
@@ -156,7 +156,7 @@ header .fl:last-child {
 
 .liked-person img {
     width: 100% !important;
-    height: 160px !important;
+    height: auto !important;
     display: block !important;
     object-fit: cover;
 }

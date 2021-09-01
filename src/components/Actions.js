@@ -2,20 +2,20 @@ import Dislike from './actions/Dislike';
 import Like from './actions/Like';
 import Love from './actions/Love';
 
-const Actions = ({ person, makeDecision }) => {
-    const userId = person.id;
+const Actions = ({ movie, makeDecision }) => {
+    const { imdbID } = movie;
 
     return (<div id="actions">
         <Dislike
-            userId={userId}
+            movieId={imdbID}
             makeDecision={makeDecision}
         />
         <Like
-            userId={userId}
+            movieId={imdbID}
             makeDecision={makeDecision}
         />
         <Love
-            userId={userId}
+            movieId={imdbID}
             makeDecision={makeDecision}
         />
     </div>)

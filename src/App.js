@@ -1,57 +1,57 @@
 import './App.css';
 import 'semantic-ui-css/semantic.min.css'
 
-import data from './data.json'
+import dataSource from './data.json'
 import { useState } from 'react';
-import Person from './components/Person';
-import Lonely from './components/Lonely';
+import Movie from './components/Movie';
+import Empty from './components/Empty';
 import { Grid } from 'semantic-ui-react'
 import Navbar from './components/Navbar';
 
 const App = () => {
-  const [people, setPeople] = useState(data);
+  const [movies, setMovies] = useState(dataSource);
   const [activeUser, setActiveUser] = useState({
-    likedUsers: [],
-    dislikedUsers: [],
-    lovedUsers: []
-  })
+    liked: [],
+    disliked: [],
+    loved: []
+  });
 
-  const removedPersonFromDataSrc = (peopleSource, userId) => {
-    return peopleSource.filter(person => person.id !== userId);
+  const removedmovieFromDataSrc = (source, movieId) => {
+    return source.filter(movie => movie.imdbID !== movieId);
   }
 
-  const makeDecision = (userId, action) => {
+  const makeDecision = (movieId, action) => {
     switch (action) {
-      case 'LIKE_USER':
-        if (!activeUser.likedUsers.includes(userId)) {
-          activeUser.likedUsers.push(userId)
+      case 'LIKE_MOVIE':
+        if (!activeUser.liked.includes(movieId)) {
+          activeUser.liked.push(movieId)
 
           setActiveUser({ ...activeUser })
-          setPeople(removedPersonFromDataSrc(people, userId));
+          setMovies(removedmovieFromDataSrc(movies, movieId));
         }
         break;
-      case 'DISLIKE_USER':
-        if (!activeUser.dislikedUsers.includes(userId)) {
-          activeUser.dislikedUsers.push(userId)
+      case 'DISLIKE_MOVIE':
+        if (!activeUser.disliked.includes(movieId)) {
+          activeUser.disliked.push(movieId)
 
           setActiveUser({ ...activeUser })
-          setPeople(removedPersonFromDataSrc(people, userId));
+          setMovies(removedmovieFromDataSrc(movies, movieId));
         }
         break;
-      case 'LOVE_USER':
-        if (!activeUser.lovedUsers.includes(userId)) {
-          activeUser.lovedUsers.push(userId)
+      case 'LOVE_MOVIE':
+        if (!activeUser.loved.includes(movieId)) {
+          activeUser.loved.push(movieId)
 
           setActiveUser({ ...activeUser })
-          setPeople(removedPersonFromDataSrc(people, userId));
+          setMovies(removedmovieFromDataSrc(movies, movieId));
         }
         break;
       default:
-        return people;
+        return movies;
     }
   }
 
-  const person = people[1];
+  const movie = movies[0];
 
   return (
     <>
@@ -61,11 +61,11 @@ const App = () => {
         <Grid columns='equal'>
           <Grid.Column>
           </Grid.Column>
-          <Grid.Column width={8}>
-            {person ? (
-              <Person person={person} makeDecision={makeDecision} />
+          <Grid.Column width={6}>
+            {movie ? (
+              <Movie movie={movie} makeDecision={makeDecision} />
             ) : (
-              <Lonely people={data} activeUser={activeUser} />
+              <Empty source={dataSource} activeUser={activeUser} />
             )}
           </Grid.Column>
           <Grid.Column>
