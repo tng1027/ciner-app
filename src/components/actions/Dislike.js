@@ -1,8 +1,8 @@
-const Dislike = ({ userId, modifySuperficialChoices }) => {
+const Dislike = ({ userId, makeDecision }) => {
     return (
         <button
             type="button"
-            onClick={() => modifySuperficialChoices(userId, 'ADD_DISLIKED_USER')}>
+            onClick={() => makeDecision(userId, 'DISLIKE_USER')}>
             <img src="images/misc/dislike.png" alt="Dislike User" />
         </button>
     )

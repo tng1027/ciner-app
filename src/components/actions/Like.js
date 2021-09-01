@@ -1,8 +1,8 @@
-const Like = ({ userId, modifySuperficialChoices }) => {
+const Like = ({ userId, makeDecision }) => {
     return (
         <button
             type="button"
-            onClick={() => modifySuperficialChoices(userId, 'ADD_LIKED_USER')}>
+            onClick={() => makeDecision(userId, 'LIKE_USER')}>
             <img src="images/misc/like.png" alt="Like User" />
         </button>
     )

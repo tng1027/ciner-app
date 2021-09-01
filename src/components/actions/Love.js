@@ -1,8 +1,8 @@
-const Love = ({ userId, modifySuperficialChoices }) => {
+const Love = ({ userId, makeDecision }) => {
     return (
         <button
             type="button"
-            onClick={() => modifySuperficialChoices(userId, 'ADD_LOVED_USER')}>
+            onClick={() => makeDecision(userId, 'LOVE_USER')}>
             <img src="images/misc/love.png" alt="Love User" />
         </button>
     )

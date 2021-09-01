@@ -12,7 +12,7 @@ const Lonely = ({ activeUserImage, likedUsers, lovedUsers }) => {
             <div id="liked-people">
                 <p>
                     {likedUsers.length > 0 &&
-                        "People you liked..."}
+                        "People you liked"}
                 </p>
 
                 {likedUsers.map(item => (

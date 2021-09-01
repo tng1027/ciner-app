@@ -6,7 +6,7 @@ import Header from './components/Header';
 import Person from './components/Person';
 import Lonely from './components/Lonely';
 
-function App() {
+const App = () => {
   const [people, setPeople] = useState(data);
   const [likedUsers, setLikedUsers] = useState([]);
   const [lovedUsers, setLovedUsers] = useState([]);
@@ -17,14 +17,11 @@ function App() {
     return peopleSource.filter(person => person.id !== userId);
   }
 
-  const modifySuperficialChoices = (userId, action) => {
+  const makeDecision = (userId, action) => {
     const newPeople = [...people];
-    // const newLikedUsers = [...likedUsers];
-    // const newLovedUsers = [...lovedUsers];
-    // const newDislikeUsers = [...dislikedUsers];
 
     switch (action) {
-      case 'ADD_LIKED_USER':
+      case 'LIKE_USER':
         if (!people[activeUser].likedUsers.includes(userId)) {
           newPeople[activeUser].likedUsers.push(userId)
 
@@ -32,7 +29,7 @@ function App() {
           setPeople(removedPersonFromDataSrc(people, userId));
         }
         break;
-      case 'ADD_DISLIKED_USER':
+      case 'DISLIKE_USER':
         if (!people[activeUser].dislikedUsers.includes(userId)) {
           newPeople[activeUser].dislikedUsers.push(userId)
 
@@ -40,7 +37,7 @@ function App() {
           setPeople(removedPersonFromDataSrc(people, userId));
         }
         break;
-      case 'ADD_LOVED_USER':
+      case 'LOVE_USER':
         if (!people[activeUser].lovedUsers.includes(userId)) {
           newPeople[activeUser].lovedUsers.push(userId)
 
@@ -53,20 +50,21 @@ function App() {
     }
   }
 
+  const person = people[1];
+
   return (
     <div className="app">
       <Header />
 
-      {people[1] ? (
+      {person ? (
         <Person
-          key={people[1].id}
-          person={people[1]}
-          modifySuperficialChoices={modifySuperficialChoices}
-          likedUsers={likedUsers}
+          person={person}
+          makeDecision={makeDecision}
         />
       ) : (
         <Lonely
           activeUserImage={people[activeUser].image}
+          dislikedUsers={dislikedUsers}
           likedUsers={likedUsers}
           lovedUsers={lovedUsers} />
       )}

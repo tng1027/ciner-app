@@ -5,7 +5,7 @@
         "age": 26,
         "image": "1.jpg",
         "likedUsers": [],
-        "superLikedUsers": [],
+        "lovedUsers": [],
         "dislikedUsers": [],
         "likedBy": []
     },
@@ -16,7 +16,7 @@
         "age": 35,
         "image": "2.jpg",
         "likedUsers": [],
-        "superLikedUsers": [],
+        "lovedUsers": [],
         "dislikedUsers": [],
         "likedBy": []
     },
@@ -27,7 +27,7 @@
         "age": 35,
         "image": "3.jpg",
         "likedUsers": [],
-        "superLikedUsers": [],
+        "lovedUsers": [],
         "dislikedUsers": [],
         "likedBy": []
     },
@@ -38,7 +38,7 @@
         "age": 45,
         "image": "4.jpg",
         "likedUsers": [],
-        "superLikedUsers": [],
+        "lovedUsers": [],
         "dislikedUsers": [],
         "likedBy": []
     },
@@ -49,7 +49,7 @@
         "age": 40,
         "image": "5.jpg",
         "likedUsers": [],
-        "superLikedUsers": [],
+        "lovedUsers": [],
         "dislikedUsers": [],
         "likedBy": []
     },
@@ -60,7 +60,7 @@
         "age": 37,
         "image": "6.jpg",
         "likedUsers": [],
-        "superLikedUsers": [],
+        "lovedUsers": [],
         "dislikedUsers": [],
         "likedBy": []
     },
@@ -71,7 +71,7 @@
         "age": 32,
         "image": "7.jpg",
         "likedUsers": [],
-        "superLikedUsers": [],
+        "lovedUsers": [],
         "dislikedUsers": [],
         "likedBy": []
     }

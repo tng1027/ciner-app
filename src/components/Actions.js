@@ -1,24 +1,24 @@
-import Rewind from './actions/Rewind';
 import Dislike from './actions/Dislike';
 import Like from './actions/Like';
 import Love from './actions/Love';
 
-const Actions = ({ person, modifySuperficialChoices }) => (
-  <div id="actions">
-    <Rewind userId={person.id} />
-    <Dislike
-      userId={person.id}
-      modifySuperficialChoices={modifySuperficialChoices}
-    />
-    <Like
-      userId={person.id}
-      modifySuperficialChoices={modifySuperficialChoices}
-    />
-    <Love
-      userId={person.id}
-      modifySuperficialChoices={modifySuperficialChoices}
-    />
-  </div>
-);
+const Actions = ({ person, makeDecision }) => {
+    const userId = person.id;
+
+    return (<div id="actions">
+        <Dislike
+            userId={userId}
+            makeDecision={makeDecision}
+        />
+        <Like
+            userId={userId}
+            makeDecision={makeDecision}
+        />
+        <Love
+            userId={userId}
+            makeDecision={makeDecision}
+        />
+    </div>)
+};
 
 export default Actions;
