@@ -1,4 +1,4 @@
-import { Header, Image } from "semantic-ui-react";
+import { Header } from "semantic-ui-react";
 import LikedPeople from "./LikedPeople";
 
 const Lonely = ({ people, activeUser }) => {
@@ -10,10 +10,6 @@ const Lonely = ({ people, activeUser }) => {
 
     return (
         <div className="lonely">
-            <span className="pulse">
-                <Image src={`/images/misc/user.png`} alt="You..." />
-            </span>
-
             <div id="liked-people">
                 <Header size='small'>{likedUsers.length > 0 && "People you liked"}</Header>
 
